@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Personal Express</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+  <h1>Movie</h1>
+  
+
+  <h3>Movie Ratings</h3>
+  
+  <ul class="movies">
+  <% for(var i=0; i<movies.length; i++) { %>
+    <li class="message">
+      <span><%= movies[i].movieName %></span>
+      <span><%= movies[i].rating %></span>
+      
+    </li>
+  <% } %>
+</ul>
+
+<h2>Leave a rating of your favorite movie</h2>
+
+<form action="/movie" method="POST" enctype="multipart/form-data">
+  <label for="movieName">Movie Name:</label>
+  <input type="text" id="movieName" name="movieName" required>
+  <br><br>
+  <label for="rating">Rating (1-10):</label>
+  <input type="number" id="rating" name="rating" min="1" max="10" required>
+  
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
+
+
+  <script src="main.js"></script>
+
+</body>
+</html>
